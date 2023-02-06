@@ -18,3 +18,16 @@ Utilizando o método específico para remoção de elementos da classe ArrayList
 2. Crie um método que analisa uma lista duplamente encadeada e troca de posição o primeiro e último elemento. Não vale apenas apagar o valor e inserir outro em cada um dos nós, você deverá fazer a modificação dos apontamentos.
 
 3. Crie um método que recebe uma lista L duplamente encadeada como parâmetro e um número inteiro X. Divida essa lista encadeada L em X partes, criando assim X novas listas (A, B e C).
+
+
+## Dynamic Stack and Row
+Utilizando as classes STACK e 
+
+QUEUE da API do JAVA, implemente uma pilha e uma fila que realizem as seguintes operações:
+1. Insira os seguintes nomes: Alfredo, Ana, Bernardo, Janaina, Helena
+2. Visualize um nome
+3. Remova 
+4. Visualize novamente o elemento do topo pilha ou início da fila
+5. Verifica se a pilha ou fila está vazia
+6. Verifica a quantidade de elementos
+7. Verifica a profundidade do nome "Ana"

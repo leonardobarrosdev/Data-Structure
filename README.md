@@ -31,3 +31,20 @@ QUEUE da API do JAVA, implemente uma pilha e uma fila que realizem as seguintes 
 5. Verifica se a pilha ou fila está vazia
 6. Verifica a quantidade de elementos
 7. Verifica a profundidade do nome "Ana"
+
+1. Crie um método chamado inverteFila(Fila f) que recebe uma fila estática F, e cria uma nova fila estática F2, com os mesmos elementos de F, porém em ordem inversa.
+
+2. Crie um método aumentaFila() que, caso a fila estática esteja cheia, aumenta o seu tamanho, permitindo assim a realização de mais inserções.
+
+3. Crie um método chamado clear na classe Fila que remova todos os elementos da fila estática.
+
+4. Implemente um programa que contemple
+uma fila estática de contatos para um call center. As opções do programa devem ser: 
+• Inserir Contato:
+– Deve solicitar ao usuário os dados e incluir o contato
+na fila; 
+• Próximo Contato:
+– Deverá pegar o Contato do Inicio da Fila, removê-lo e
+mostrar os seus dados na tela para o usuário efetuar
+o contato com o cliente. 
+• Sair

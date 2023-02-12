@@ -1,4 +1,4 @@
-package com.mycompany.dstack;
+package com.mycompany.dynamic;
 
 /**
  *

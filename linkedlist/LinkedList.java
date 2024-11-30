@@ -94,17 +94,17 @@ public class LinkedList {
     public int kthElement(Object element, int k) {
         if(this.start == null || k < 1) throw new IllegalArgumentException("This list's empty or invalid K.");
         Node current = this.start;
-        int position = 0;
+        int position = -1;
         while(current.getNext() != null) {
             position++;
             if(current.getElement().equals(element)) {
+                if(k == 1) return position;
                 k--;
-                if(k == 0) return position;
-                current = current.getNext();
             }
             current = current.getNext();
         }
-        return -1;
+        if (current.getElement().equals(element)) position++;
+        return position;
     }
 
     public String toString() {

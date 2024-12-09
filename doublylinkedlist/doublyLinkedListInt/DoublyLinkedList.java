@@ -22,13 +22,28 @@ public class DoublyLinkedList {
     }
 
     public String toString() {
+        if(this.start == null) return "[]";
         StringBuilder str = new StringBuilder("[");
         Node current = this.start;
         while(current.getNext() != null) {
             str.append(current.getElement() + ", ");
             current = current.getNext();
         }
-        if(current.getElement() >= 0) str.append(current.getElement());
+        if(current != null) str.append(current.getElement());
+        str.append("]");
+        return str.toString();
+    }
+
+    public String toString(DoublyLinkedList list) {
+        if(list.start == null) return "[]";
+        StringBuilder str = new StringBuilder("[");
+        Node current = list.start;
+        while(current.getNext() != null) {
+            System.out.println(current.getElement());
+            str.append(current.getElement() + ", ");
+            current = current.getNext();
+        }
+        if(current != null) str.append(current.getElement());
         str.append("]");
         return str.toString();
     }
@@ -123,5 +138,71 @@ public class DoublyLinkedList {
         }
         if(isPar) return current.getPrevious().getElement() + " and " + current.getElement();
         return Integer.toString(current.getElement());
+    }
+
+    // Question 5
+    public String getTwoFirstPositionsOfList(DoublyLinkedList L, int X) {
+        if(L.start == null) throw new IllegalArgumentException("List's empty.");
+        Node start = L.start;
+        Node current = start;
+        int index = 0;
+        StringBuilder str = new StringBuilder("[");
+        while(current != null) {
+            if(current.getElement() == X) {
+                index++;
+                str.append(index);
+                if(index < 2) str.append(", ");
+            }
+            current = current.getNext();
+        }
+        str.append("]");
+        return str.toString();
+    }
+
+    // Question 6
+    public DoublyLinkedList addStart(DoublyLinkedList list, int element) {
+        Node newNode = new Node(element, null, null);
+        if(list.start != null) {
+            if(list.start.getNext() != null) list.start.getNext().setPrevious(newNode);
+        }
+        list.start = newNode;
+        if(list.end == null) list.end = newNode;
+        return list;
+    }
+
+    public DoublyLinkedList addEnd(DoublyLinkedList list, int element) {
+        if(list.start == null) {
+            list = this.addStart(list, element);
+            return list;
+        }
+        Node current = list.end;
+        Node node1 = new Node(element, null, current);
+        current.setNext(node1);
+        current = node1;
+        list.end = current;
+        return list;
+    }
+
+    public String addInvertLastValueOfList(DoublyLinkedList list, int n1, int n2) {
+        list = this.addEnd(list, n1);
+        if(list.start.getNext() == null) {
+            list = this.addStart(list, n2);
+            return list.toString();
+        }
+        list = this.addEnd(list, n2);
+        Node current = list.end;
+        Node previous = current.getPrevious();
+        if(previous.getPrevious() != null) {
+            current.setPrevious(previous.getPrevious());
+            previous.getPrevious().setNext(current);
+        } else {
+            current.setPrevious(null);
+        }
+        previous.setPrevious(current);
+        previous.setNext(null);
+        current.setNext(previous);
+        current = current.getNext();
+        list.end = current;
+        return list.toString();
     }
 }

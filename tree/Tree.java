@@ -1,5 +1,6 @@
 public class Tree {
     public Node root;
+    private String str;
     
     public Tree() {
         this.root = null;
@@ -17,7 +18,7 @@ public class Tree {
         while(current != null) {
             if(element < current.getValue()) {
                 if(current.getLeft() == null) {
-                    Node nw = new NOde(element);
+                    Node nw = new Node(element);
                     current.setLeft(nw);
                     nw.setFather(nw);
                     return;
@@ -35,15 +36,17 @@ public class Tree {
         }
     }
 
-    public String toStringByCurrent(Node current) {
+    public void toStringByCurrent(Node current) {
+        this.str = current.getValue() + ", ";
         if(current.getLeft() != null) {
             current = current.getLeft();
         }
         if(current.getRight() != null) {
             current = current.getRight();
         }
-        this.str = this.current.getValue() + ", "
-        this.toStringByCurrent(current);
+        if(current.getLeft() != null && current.getRight() != null) {
+            this.toStringByCurrent(current);
+        }
     }
 
     public String toString() {
@@ -54,7 +57,7 @@ public class Tree {
         }
         this.str = "[ ";
         this.toStringByCurrent(current);
-        this.str = substring(0, this.str.length - 2) + " ]";
+        this.str += " ]";
         return this.str;
     }
 }

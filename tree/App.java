@@ -7,5 +7,7 @@ public class App {
     tree.insert(2);
     tree.insert(6);
     tree.insert(1);
+
+    tree.toString();
   }
 }

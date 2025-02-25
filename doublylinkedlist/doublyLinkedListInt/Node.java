@@ -1,19 +1,19 @@
-public class Node {
-    private Node next;
-    private Node previous;
+public class Nodede {
+    private Nodede next;
+    private Nodede previous;
     private int element;
 
-    public Node(int element, Node next, Node previous) {
+    public Nodede(int element, Nodede next, Nodede previous) {
         this.element = element;
         this.next = next;
         this.previous = previous;
     }
 
-    public Node getNext() {
+    public Nodede getNext() {
         return next;
     }
 
-    public Node getPrevious() {
+    public Nodede getPrevious() {
         return previous;
     }
 
@@ -21,11 +21,11 @@ public class Node {
         return element;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Nodede next) {
         this.next = next;
     }
 
-    public void setPrevious(Node previous) {
+    public void setPrevious(Nodede previous) {
         this.previous = previous;
     }
 

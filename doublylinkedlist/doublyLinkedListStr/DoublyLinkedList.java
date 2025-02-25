@@ -1,18 +1,18 @@
 package com.mycompany.doublylinkedlist;
 
 public class DoublyLinkedList {
-    private Node init;
-    private Node end;
+    private Nodede init;
+    private Nodede end;
     private int totElements;
     
     DoublyLinkedList() {}
     
     // Questão 01
-    public Node viewMidleNode() {
+    public Nodede viewMidleNodede() {
         if(this.totElements == 0)
             throw new IllegalArgumentException("Is empty");
-        // Retorna o NO do meio
-        return this.getNode((int)(this.totElements / 2));
+        // Retorna o Node do meio
+        return this.getNodede((int)(this.totElements / 2));
     }
     
     // Questão 02
@@ -23,7 +23,7 @@ public class DoublyLinkedList {
         String positions = "";
         // Percorre a lista verificando se há X nas posições qtdPositions
         for(int i = 0; i < this.totElements; i++) {
-            if(x.equals(this.getNode(i).getElement())) {
+            if(x.equals(this.getNodede(i).getElement())) {
                 positions += String.format("Posição %s\n", i);
                 qtdPositions--;
                 if(qtdPositions == 0) return positions;
@@ -36,14 +36,14 @@ public class DoublyLinkedList {
     // Questão 03
     public String addTwoParams(int n1, int n2, DoubleListEncadead list) {
         // Adicionando ao início
-        Node nw1 = new Node(n1);
+        Nodede nw1 = new Nodede(n1);
         list.init = nw1;
         list.end = nw1;
         
         list.totElements++;
         
-        // Criação de novo NO e referência
-        Node nw = new Node(n2);
+        // Criação de Nodevo Node e referência
+        Nodede nw = new Nodede(n2);
         // Insersão de indicações (Apontmentos)
         nw.setPrevius(list.init);
         list.init.setNext(nw);
@@ -59,7 +59,7 @@ public class DoublyLinkedList {
         if(list.totElements == 0)
             throw new IllegalArgumentException("Is empty");
         
-        Node current = list.init;
+        Nodede current = list.init;
         int size = list.totElements;
         
         for(int position = 0; position < size; position++) {
@@ -70,7 +70,7 @@ public class DoublyLinkedList {
                     current.setPrevius(null);
                     list.totElements--;
                 } else {
-                    Node previus = current.getPrevius();
+                    Nodede previus = current.getPrevius();
                     previus.setNext(current.getNext());
                     current = previus.getNext();
                     list.totElements--;
@@ -90,10 +90,10 @@ public class DoublyLinkedList {
         DoubleListEncadead lt = new DoubleListEncadead();
 
         int size = list.totElements - 1;
-        Node current = this.getNode(size, list);
+        Nodede current = this.getNodede(size, list);
         
         for(int i = size; i >= 0; i--) {
-            Node next = this.getNode(i, list);
+            Nodede next = this.getNodede(i, list);
             current.setNext(next);
             next.setPrevius(current);
             
@@ -112,10 +112,10 @@ public class DoublyLinkedList {
             throw new IllegalArgumentException("Have empty list");
         }
         // Adicionando os elementos da list 2 a lista 1 (unindo as listas)
-        for(Node current = list2.init; current != null; current = current.getNext()) {
+        for(Nodede current = list2.init; current != null; current = current.getNext()) {
             list1.add(current.getElement());
         }
-        // Uma nova lista será criada apartir de uma lista ordenada.
+        // Uma Nodeva lista será criada apartir de uma lista ordenada.
         // O metodo sortList(list) recebe uma lista qualquer e retonar a mesmas de forma ordenada
         DoubleListEncadead list = this.sortList(list1);
         
@@ -124,9 +124,9 @@ public class DoublyLinkedList {
     
     public DoubleListEncadead sortList(DoubleListEncadead list) {
         if(list.init == null) return list;
-        // O processo de verificação do NO e o recebimento de um próximo é realizado no for
-        for(Node current = list.init; current != null; current = current.getNext()) {
-            for(Node index = current.getNext(); index != null; index = index.getNext()) {
+        // O processo de verificação do Node e o recebimento de um próximo é realizado Node for
+        for(Nodede current = list.init; current != null; current = current.getNext()) {
+            for(Nodede index = current.getNext(); index != null; index = index.getNext()) {
                 // Nessa parte os elementos serão comparados e setados para suas devidas posições
                 if(current.getElement() > index.getElement()) {
                     int element = current.getElement();
@@ -145,10 +145,10 @@ public class DoublyLinkedList {
         if(this.totElements == 0)
             throw new IllegalArgumentException("Is empty");
         if((this.totElements % 2) != 0)
-            return Integer.toString(this.getNode((int)(this.totElements / 2)).getElement());
+            return Integer.toString(this.getNodede((int)(this.totElements / 2)).getElement());
         
-        String midler = Integer.toString(this.getNode((int)(this.totElements / 2)).getElement());
-        midler += Integer.toString(this.getNode((int)(this.totElements / 2) - 1).getElement());
+        String midler = Integer.toString(this.getNodede((int)(this.totElements / 2)).getElement());
+        midler += Integer.toString(this.getNodede((int)(this.totElements / 2) - 1).getElement());
         
         return midler;
     }
@@ -158,8 +158,8 @@ public class DoublyLinkedList {
             throw new IllegalArgumentException("Empty list.");
         }
         
-        Node current = this.init;
-        Node previus;
+        Nodede current = this.init;
+        Nodede previus;
         
         int growing = 0;
         int descending = 0;
@@ -183,12 +183,12 @@ public class DoublyLinkedList {
         else if(descending == this.totElements - 1 && growing == 0)
             return "Descending order";
         else
-            return "Not ordered";
+            return "Nodet ordered";
     }
     
     public void modifyFirstEndPosition() {
-        Node second = this.init.getNext();
-        Node penultemate = this.end.getPrevius();
+        Nodede second = this.init.getNext();
+        Nodede penultemate = this.end.getPrevius();
         
         second.setPrevius(this.end);
         this.end.setPrevius(null);
@@ -207,9 +207,9 @@ public class DoublyLinkedList {
             this.modifyFirstEndPosition();
             System.out.println("I'm in a condiction of the Modify position");
         } else {
-            Node current = this.getNode(position);
-            Node next = current.getNext();
-            next.setPrevius(this.getNode(targetPosition));
+            Nodede current = this.getNodede(position);
+            Nodede next = current.getNext();
+            next.setPrevius(this.getNodede(targetPosition));
         }
     }
     
@@ -227,10 +227,10 @@ public class DoublyLinkedList {
         } else if(position == this.totElements - 1) {
             this.addAtEnd(element);
         } else {
-            Node previus = this.getNode(position);
-            Node next = previus.getNext();
+            Nodede previus = this.getNodede(position);
+            Nodede next = previus.getNext();
 
-            Node nw = new Node(next, element);
+            Nodede nw = new Nodede(next, element);
 
             previus.setNext(nw);
             nw.setPrevius(previus);
@@ -240,13 +240,13 @@ public class DoublyLinkedList {
     }
 
     public void addAtInit(int element) {
-        Node nw = new Node(element);
+        Nodede nw = new Nodede(element);
         
         if(this.totElements == 0) {
             this.init = nw;
             this.end = nw;
         } else {
-            Node next = this.init;
+            Nodede next = this.init;
             nw.setNext(next);
             next.setPrevius(nw);
             this.init = nw;
@@ -259,8 +259,8 @@ public class DoublyLinkedList {
         if(this.totElements == 0) {
             this.addInit(element);
         } else {
-            Node nw = new Node(element);
-            Node previus = this.end;
+            Nodede nw = new Nodede(element);
+            Nodede previus = this.end;
             previus.setNext(nw);
             nw.setPrevius(previus);
             this.end = nw;
@@ -269,12 +269,12 @@ public class DoublyLinkedList {
         }
     }
     
-    public Node getNode(int position) {
+    public Nodede getNodede(int position) {
         if(!this.isPosition(position)) {
             throw new IllegalArgumentException("Invalid position!");
         }
         
-        Node current = this.init;
+        Nodede current = this.init;
         
         for(int i = 0; i < position; i++) {
             current = current.getNext();
@@ -293,14 +293,14 @@ public class DoublyLinkedList {
         } else if(position == this.totElements) {
             this.addEnd(element);
         } else {
-            Node nw = new Node(element);
-            Node previus = this.init;
+            Nodede nw = new Nodede(element);
+            Nodede previus = this.init;
             
             for(int i = 0; i < position - 1; i++) {
                 previus = previus.getNext();
             }
             
-            Node next = previus.getNext();
+            Nodede next = previus.getNext();
             
             previus.setNext(nw);
             nw.setPrevius(previus);
@@ -334,11 +334,11 @@ public class DoublyLinkedList {
         if(position == 0) return this.rmInit();
         if(position == this.totElements) return this.rmEnd();
         
-        Node current = this.getNode(position);
+        Nodede current = this.getNodede(position);
         
         if(current.equals(null)) return false;
         
-        Node previus = current.getPrevius();
+        Nodede previus = current.getPrevius();
         previus.setNext(current.getNext());
         
         this.totElements--;
@@ -346,10 +346,10 @@ public class DoublyLinkedList {
         return true;
     }
 
-    private Node getNode(int position) {
+    private Nodede getNodede(int position) {
         if(this.totElements == 0 || position > this.totElements) return null;
         
-        Node current = this.init;
+        Nodede current = this.init;
         
         for(int i = 0; i < position; i++) {
             current = current.getNext();
@@ -358,10 +358,10 @@ public class DoublyLinkedList {
         return current;
     }
     
-    private Node getNode(int position, DoubleListEncadead list) {
+    private Nodede getNodede(int position, DoubleListEncadead list) {
         if(list.totElements == 0 || position > list.totElements) return null;
         
-        Node current = list.init;
+        Nodede current = list.init;
         
         for(int i = 0; i < position; i++) {
             current = current.getNext();
@@ -374,7 +374,7 @@ public class DoublyLinkedList {
         if(list.totElements == 0 || position > list.totElements)
             throw new IllegalArgumentException("Is empty or position isn´t valid.");
         
-        Node current = list.init;
+        Nodede current = list.init;
         
         for(int i = 0; i <= position; i++) {
             current = current.getNext();
@@ -389,7 +389,7 @@ public class DoublyLinkedList {
         
         StringBuilder str = new StringBuilder();
         str.append("[ ");
-        Node current = this.init;
+        Nodede current = this.init;
         
         for(int i = 0; i < this.totElements - 1; i++) {
             str.append(current.getElement() + ", ");
@@ -406,7 +406,7 @@ public class DoublyLinkedList {
         
         StringBuilder str = new StringBuilder();
         str.append("[ ");
-        Node current = list.init;
+        Nodede current = list.init;
         
         for(int i = 0; i < list.totElements - 1; i++) {
             str.append(current.getElement() + ", ");

@@ -1,7 +1,7 @@
-import workspaces.DataStructure.tree.Node;
+import workspaces.DataStructure.tree.Nodede;
 
 public class Tree {
-    public Node root;
+    public Nodede root;
     private String str;
     
     public Tree() {
@@ -14,13 +14,13 @@ public class Tree {
     
     public void insert(int element) {
         if(this.isEmpty()) {
-            this.root = new Node(element);
+            this.root = new Nodede(element);
         }
-        Node current = this.root;
+        Nodede current = this.root;
         while(current != null) {
             if(element < current.getValue()) {
                 if(current.getLeft() == null) {
-                    Node nw = new Node(element);
+                    Nodede nw = new Nodede(element);
                     current.setLeft(nw);
                     nw.setFather(nw);
                     return;
@@ -28,7 +28,7 @@ public class Tree {
                 current = current.getLeft();
             } else {
                 if(current.getRight() == null) {
-                    Node nw = new Node(element);
+                    Nodede nw = new Nodede(element);
                     current.setRight(nw);
                     nw.setFather(nw);
                     return;
@@ -38,7 +38,7 @@ public class Tree {
         }
     }
 
-    public void toStringByCurrent(Node current) {
+    public void toStringByCurrent(Nodede current) {
         this.str = current.getValue() + ", ";
         if(current.getLeft() != null) {
             current = current.getLeft();
@@ -53,7 +53,7 @@ public class Tree {
 
     public String toString() {
         if(this.isEmpty()) return "[ ]";
-        Node current = this.root;
+        Nodede current = this.root;
         if(current.getLeft() == null && current.getRight() == null) {
             return "[ " + current.getValue() + " ]";
         }

@@ -1,29 +1,29 @@
-import tree.Node;
+import tree.Nodede;
 
 public class LinkedList {
-    private Node start;
-    private Node end;
+    private Nodede start;
+    private Nodede end;
 
     public void addStart(Object element) {
-        Node startElement = new Node(element, this.start);
+        Nodede startElement = new Nodede(element, this.start);
         this.start = startElement;
         if(this.end == null) this.end = startElement;
     }
 
     public void addEnd(Object element) {
         if(this.start == null) this.addStart(element);
-        Node newNode = new Node(element, null);
-        this.end.setNext(newNode);
-        this.end = newNode;
+        Nodede newNodede = new Nodede(element, null);
+        this.end.setNext(newNodede);
+        this.end = newNodede;
     }
 
     public void addByPosition(Object element, int position) {
         if(this.start == null) this.addStart(element);
         if(position == 1) this.addEnd(element);
-        Node current = this.start.getNext();
+        Nodede current = this.start.getNext();
         while(current.getNext() != null) {
             if(position == 2) {
-                Node newElement = new Node(element, current.getNext());
+                Nodede newElement = new Nodede(element, current.getNext());
                 current.setNext(newElement);
                 current = newElement;
             }
@@ -40,10 +40,10 @@ public class LinkedList {
     public void removeElement(Object element) {
         if(this.start == null) throw new IllegalArgumentException("This list's empty.");
         if(this.start.getElement().equals(element)) this.removeFirstElement();
-        Node current = this.start;
+        Nodede current = this.start;
         while(current.getNext() != null) {
             if(current.getNext().getElement().equals(element)) {
-                Node skip = current.getNext();
+                Nodede skip = current.getNext();
                 if(skip.getNext() == null) {
                     this.end.setNext(current);
                     this.end = current;
@@ -62,10 +62,10 @@ public class LinkedList {
             throw new IllegalArgumentException("This list's empty or invalid position.");
         }
         if(position == 0) this.removeFirstElement();
-        Node current = this.start;
+        Nodede current = this.start;
         while(current.getNext() != null) {
             if(position == 1) {
-                Node skip = current.getNext();
+                Nodede skip = current.getNext();
                 if(skip.getNext() == null) {
                     this.end.setNext(current);
                     this.end = current;
@@ -84,7 +84,7 @@ public class LinkedList {
     public void updateElementByPosition(Object element, int position) {
         if(this.start == null) throw new IllegalArgumentException("This list's empty.");
         if(position == 0) this.addStart(element);
-        Node current = this.start;
+        Nodede current = this.start;
         while(position >= 1 && current.getNext() != null) {
             current = current.getNext();
             position--;
@@ -95,7 +95,7 @@ public class LinkedList {
 
     public int kthElement(Object element, int k) {
         if(this.start == null || k < 1) throw new IllegalArgumentException("This list's empty or invalid K.");
-        Node current = this.start;
+        Nodede current = this.start;
         int position = -1;
         while(current.getNext() != null) {
             position++;
@@ -112,7 +112,7 @@ public class LinkedList {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("[");
-        Node current = this.start;
+        Nodede current = this.start;
         while(current.getNext() != null) {
             str.append(current.getElement() + ", ");
             current = current.getNext();

@@ -1,27 +1,27 @@
 package com.mycompany.doublylinkedlist;
 
-public class Node {
-    private Node next;
-    private Node previus;
+public class Nodede {
+    private Nodede next;
+    private Nodede previus;
     private int element;
     
-    Node(int element) {
+    Nodede(int element) {
         this.element = element;
     }
     
-    public void setNext(Node next) {
+    public void setNext(Nodede next) {
         this.next = next;
     }
     
-    public Node getNext() {
+    public Nodede getNext() {
         return this.next;
     }
     
-    public void setPrevius(Node previus) {
+    public void setPrevius(Nodede previus) {
         this.previus = previus;
     }
     
-    public Node getPrevius() {
+    public Nodede getPrevius() {
         return this.previus;
     }
     

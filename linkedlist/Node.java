@@ -1,15 +1,15 @@
-import tree.Node;
+import tree.Nodede;
 
-public class Node {
-    private Node next;
+public class Nodede {
+    private Nodede next;
     private Object element;
 
-    public Node(Object element, Node next) {
+    public Nodede(Object element, Nodede next) {
         this.element = element;
         this.next = next;
     }
 
-    public Node getNext() {
+    public Nodede getNext() {
         return next;
     }
 
@@ -17,7 +17,7 @@ public class Node {
         return element;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Nodede next) {
         this.next = next;
     }
 

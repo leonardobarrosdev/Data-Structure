@@ -1,10 +1,10 @@
-public class Node {
+public class Nodede {
     private int value;
-    private Node left;
-    private Node right;
-    private Node father;
+    private Nodede left;
+    private Nodede right;
+    private Nodede father;
     
-    public Node(int value) {
+    public Nodede(int value) {
         this.value = value;
         this.left = null;
         this.right = null;
@@ -19,27 +19,27 @@ public class Node {
         this.value = value;
     }
     
-    public Node getLeft() {
+    public Nodede getLeft() {
         return this.left;
     }
     
-    public void setLeft(Node left) {
+    public void setLeft(Nodede left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public Nodede getRight() {
         return this.right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(Nodede right) {
         this.right = right;
     }
 
-    public Node getFather() {
+    public Nodede getFather() {
         return this.father;
     }
 
-    public void setFather(Node father) {
+    public void setFather(Nodede father) {
         this.father = father;
     }
 }

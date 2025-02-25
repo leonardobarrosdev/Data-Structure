@@ -1,30 +1,30 @@
 public class DoublyLinkedList {
-    private Node start;
-    private Node end;
+    private Nodede start;
+    private Nodede end;
 
     public void addStart(int element) {
-        Node newNode = new Node(element, this.start, null);
+        Nodede newNodede = new Nodede(element, this.start, null);
         if(this.start != null) {
-            if(this.start.getNext() != null) this.start.getNext().setPrevious(newNode);
+            if(this.start.getNext() != null) this.start.getNext().setPrevious(newNodede);
         }
-        this.start = newNode;
-        if(this.end == null) this.end = newNode;
+        this.start = newNodede;
+        if(this.end == null) this.end = newNodede;
     }
 
     public void addEnd(int element) {
         if(this.start == null) {
             this.addStart(element);
         } else {
-            Node newNode = new Node(element, null, this.end);
-            this.end.setNext(newNode);
-            this.end = newNode;
+            Nodede newNodede = new Nodede(element, null, this.end);
+            this.end.setNext(newNodede);
+            this.end = newNodede;
         }
     }
 
     public String toString() {
         if(this.start == null) return "[]";
         StringBuilder str = new StringBuilder("[");
-        Node current = this.start;
+        Nodede current = this.start;
         while(current.getNext() != null) {
             str.append(current.getElement() + ", ");
             current = current.getNext();
@@ -37,7 +37,7 @@ public class DoublyLinkedList {
     public String toString(DoublyLinkedList list) {
         if(list.start == null) return "[]";
         StringBuilder str = new StringBuilder("[");
-        Node current = list.start;
+        Nodede current = list.start;
         while(current.getNext() != null) {
             System.out.println(current.getElement());
             str.append(current.getElement() + ", ");
@@ -49,7 +49,7 @@ public class DoublyLinkedList {
     }
 
     public int getTotalElements() {
-        Node current = this.start;
+        Nodede current = this.start;
         int total = 0;
         while(current != null) {
             current = current.getNext();
@@ -61,7 +61,7 @@ public class DoublyLinkedList {
     // Question 01
     public String getSortedType() {
         if(this.start == null) throw new IllegalArgumentException("List's empty.");
-        Node current = this.end;
+        Nodede current = this.end;
         int total = this.getTotalElements();
         int growing = total; int descending = total;
         for(int i = total; total >= 1; total--) {
@@ -72,15 +72,15 @@ public class DoublyLinkedList {
         }
         if(growing <= total) return "Growing";
         if(descending <= total) return "Descending";
-        return "List's unordered.";
+        return "List's uNoderdered.";
     }
 
     // Question 02
     public void swapsFirstByLast() {
         if(this.start == null || this.start.getNext() == null)
             throw new IllegalArgumentException("List's empty or have only one.");
-        Node current = this.start;
-        Node last = this.end;
+        Nodede current = this.start;
+        Nodede last = this.end;
         if(this.getTotalElements() == 2) {
             current.setPrevious(last);
             current.setNext(null);
@@ -101,8 +101,8 @@ public class DoublyLinkedList {
     // Question 03
     public String toDivideListBy(DoublyLinkedList list, int x) {
         if(list.start == null || x < 1) throw new IllegalArgumentException("List or X invalid.");
-        Node start = list.start;
-        Node current = start;
+        Nodede start = list.start;
+        Nodede current = start;
         int count = 0;
         while(current != null) {
             current = current.getNext();
@@ -132,7 +132,7 @@ public class DoublyLinkedList {
         if(list.start == null) throw new IllegalArgumentException("Is empty.");
         int total = this.getTotalElements();
         int middle = total / 2; boolean isPar = (total % 2) == 0;
-        Node current = list.start;
+        Nodede current = list.start;
         for(int i = middle; i > 0; i--) {
             current = current.getNext();
         }
@@ -143,8 +143,8 @@ public class DoublyLinkedList {
     // Question 5
     public String getTwoFirstPositionsOfList(DoublyLinkedList L, int X) {
         if(L.start == null) throw new IllegalArgumentException("List's empty.");
-        Node start = L.start;
-        Node current = start;
+        Nodede start = L.start;
+        Nodede current = start;
         int index = 0;
         StringBuilder str = new StringBuilder("[");
         while(current != null) {
@@ -161,12 +161,12 @@ public class DoublyLinkedList {
 
     // Question 6
     public DoublyLinkedList addStart(DoublyLinkedList list, int element) {
-        Node newNode = new Node(element, null, null);
+        Nodede newNodede = new Nodede(element, null, null);
         if(list.start != null) {
-            if(list.start.getNext() != null) list.start.getNext().setPrevious(newNode);
+            if(list.start.getNext() != null) list.start.getNext().setPrevious(newNodede);
         }
-        list.start = newNode;
-        if(list.end == null) list.end = newNode;
+        list.start = newNodede;
+        if(list.end == null) list.end = newNodede;
         return list;
     }
 
@@ -175,10 +175,10 @@ public class DoublyLinkedList {
             list = this.addStart(list, element);
             return list;
         }
-        Node current = list.end;
-        Node node1 = new Node(element, null, current);
-        current.setNext(node1);
-        current = node1;
+        Nodede current = list.end;
+        Nodede Nodede1 = new Nodede(element, null, current);
+        current.setNext(Nodede1);
+        current = Nodede1;
         list.end = current;
         return list;
     }
@@ -190,8 +190,8 @@ public class DoublyLinkedList {
             return list.toString();
         }
         list = this.addEnd(list, n2);
-        Node current = list.end;
-        Node previous = current.getPrevious();
+        Nodede current = list.end;
+        Nodede previous = current.getPrevious();
         if(previous.getPrevious() != null) {
             current.setPrevious(previous.getPrevious());
             previous.getPrevious().setNext(current);

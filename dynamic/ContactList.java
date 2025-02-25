@@ -43,7 +43,7 @@ public class ContactList {
                 Object[] data = new Object[2];
                 
                 try{
-                    data[0] = input.next("Seu nome: ");
+                    data[0] = input.next("Seu Nodeme: ");
                     data[1] = input.next("Número: ");
 
                     this.push(data);

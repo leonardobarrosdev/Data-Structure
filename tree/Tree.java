@@ -1,3 +1,5 @@
+import workspaces.DataStructure.tree.Node;
+
 public class Tree {
     public Node root;
     private String str;

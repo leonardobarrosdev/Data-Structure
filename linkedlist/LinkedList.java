@@ -1,3 +1,5 @@
+import tree.Node;
+
 public class LinkedList {
     private Node start;
     private Node end;

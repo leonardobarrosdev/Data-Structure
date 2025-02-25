@@ -1,3 +1,5 @@
+import tree.Node;
+
 public class Node {
     private Node next;
     private Object element;
